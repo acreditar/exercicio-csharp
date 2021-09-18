@@ -1,34 +1,36 @@
 ﻿using System;
 using System.Globalization;
 
-namespace ConsoleApp1 {
+namespace ConsoleApp1{
     class Program {
         static void Main(string[] args) {
-            //Chamar uma classe de outro arquivo: 
-            Pessoa p1 = new Pessoa();
-            Pessoa p2 = new Pessoa();
+            Triangulo x, y;
 
-            Console.WriteLine("Dados da primeira pessoa: ");
-            Console.Write("Nome: ");
-            p1.Nome = Console.ReadLine();
-            Console.Write("Idade: ");
-            p1.Idade = int.Parse(Console.ReadLine());
+            x = new Triangulo();
+            y = new Triangulo();
 
-            Console.WriteLine("Dados da segunda pessoa: ");
-            Console.Write("Nome: ");
-            p2.Nome = Console.ReadLine();
-            Console.Write("Idade: ");
-            p2.Idade = int.Parse(Console.ReadLine());
+            Console.WriteLine("Entre com as medidas do triângulo X:");
+            x.A = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            x.B = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            x.C = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
-            //comparaçao de idade: 
-            if (p1.Idade > p2.Idade) {
-                Console.WriteLine("Pessoa mais velha: " + p1.Nome);
+            Console.WriteLine("Entre com as medidas do triângulo Y:");
+            y.A = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            y.B = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            y.C = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+            double areaX = x.Area();
+            double areaY = y.Area();
+
+
+            Console.WriteLine("A área de X = " + areaX.ToString("F4", CultureInfo.InvariantCulture));
+            Console.WriteLine("A área de Y = " + areaY.ToString("F4", CultureInfo.InvariantCulture));
+
+            if(areaX > areaY) {
+                Console.WriteLine("A maior área é: X");
             } else {
-                Console.WriteLine("Pessoa mais velha: " + p2.Nome);
+                Console.WriteLine("A maior área é: Y");
             }
-            
-        
-
         }
     }
-} 
+}
