@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
 
-namespace ConsoleApp1{
+namespace ConsoleApp1 {
     class Program {
         static void Main(string[] args) {
             Triangulo x, y;
@@ -20,8 +20,8 @@ namespace ConsoleApp1{
             y.C = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
             double areaX = x.Area();
-            double areaY = y.Area();
 
+            double areaY = y.Area();
 
             Console.WriteLine("A área de X = " + areaX.ToString("F4", CultureInfo.InvariantCulture));
             Console.WriteLine("A área de Y = " + areaY.ToString("F4", CultureInfo.InvariantCulture));
